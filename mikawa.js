@@ -74,8 +74,6 @@ class Mikawa {
 function init() {
   美川さん = new Mikawa('美川', 'さそり座', '女');
   美川さん.startIntro();
-  console.log('わー！'+美川さん.name()+'さんだー！！！'
-              +美川さん.name()+'さん！'+美川さん.name()+'さん！');
 }
 
 function search3() {
