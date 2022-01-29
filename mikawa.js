@@ -85,7 +85,6 @@ function search2() {
   
   for (星座 of 星座リスト) {
     for (性別 of 性別リスト) {
-      
       console.log(星座+'の'+性別+'ですか？');
       返事 = 美川さん.isAsked(星座, 性別);
       if (返事) {
