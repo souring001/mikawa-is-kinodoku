@@ -48,6 +48,27 @@ class Mikawa {
   name() {
     return this.#名前;
   }
+
+  isGender(性別) {
+    if (this.#性別 == 性別) {
+      console.log('(頷く)');
+      return true;
+    } else {
+      console.log('(首を振る)');
+      return false;
+    }
+  }
+
+  isSign(星座) {
+    if (this.#星座 == 星座) {
+      console.log('(頷く)');
+      return true;
+    } else {
+      console.log('(首を振る)');
+      return false;
+    }
+  }
+
 }
 
 function init() {
@@ -57,20 +78,23 @@ function init() {
               +美川さん.name()+'さん！'+美川さん.name()+'さん！');
 }
 
-function search() {
+function search2() {
   let 星座;
   let 性別;
-  let 返事 = false;
-
-  while(!返事) {
-    星座 = 星座リスト[Math.floor(Math.random() * 星座リスト.length)];
-    性別 = 性別リスト[Math.floor(Math.random() * 性別リスト.length)];
+  let 返事;
   
-    console.log(星座+'の'+性別+'ですか？');
-    返事 = 美川さん.isAsked(星座, 性別);
+  for (星座 of 星座リスト) {
+    for (性別 of 性別リスト) {
+      
+      console.log(星座+'の'+性別+'ですか？');
+      返事 = 美川さん.isAsked(星座, 性別);
+      if (返事) {
+        return;
+      }
+    }
   }
 }
 
 init();
-search();
+search2();
 美川さん.startSinging();
