@@ -78,22 +78,36 @@ function init() {
               +美川さん.name()+'さん！'+美川さん.name()+'さん！');
 }
 
-function search2() {
+function search3() {
   let 星座;
   let 性別;
-  let 返事;
-  
+
   for (星座 of 星座リスト) {
-    for (性別 of 性別リスト) {
-      console.log(星座+'の'+性別+'ですか？');
-      返事 = 美川さん.isAsked(星座, 性別);
-      if (返事) {
-        return;
-      }
+    console.log(星座+'ですか？');
+    if (美川さん.isSign(星座)) {
+      break;
     }
   }
+
+  for (性別 of 性別リスト) {
+    console.log(性別+'ですか？');
+    if (美川さん.isGender(性別)) {
+      break;
+    }
+  }
+
+  console.log('ってことは'+星座+'の'+性別+'ですね？');
+  美川さん.isAsked(星座, 性別);
+}
+
+function search4() {
+  let 星座 = binarySearchSign(星座リスト);;
+  let 性別 = binarySearchGender(性別リスト);
+
+  console.log('ってことは'+星座+'の'+性別+'ですね？');
+  美川さん.isAsked(星座, 性別);
 }
 
 init();
-search2();
+search3();
 美川さん.startSinging();
